@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebateForm", "WindowsFormsApp2\RebateForm.csproj", "{4ED4A325-CF04-4869-AF2C-57986D49E7C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4ED4A325-CF04-4869-AF2C-57986D49E7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED4A325-CF04-4869-AF2C-57986D49E7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED4A325-CF04-4869-AF2C-57986D49E7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED4A325-CF04-4869-AF2C-57986D49E7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56BC79A2-3C3E-44F5-9F48-3CA493F60FD4}
+	EndGlobalSection
+EndGlobal
