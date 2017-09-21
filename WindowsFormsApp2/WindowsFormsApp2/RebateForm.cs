@@ -18,7 +18,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        List<Person> ls = new List<Person>();
+        //List<Person> ls = new List<Person>();
         string filename = @"person.txt";
 
         private void Add_Click(object sender, EventArgs e)
@@ -38,7 +38,11 @@ namespace WindowsFormsApp2
                 Proof = true,
                 DateReceived = default(DateTime)
             };
-            ls.Add(p);
+           // ls.Add(p);
+            FileStream fs = new FileStream(filename, FileMode.Append);
+            StreamWriter stream = new StreamWriter(fs);
+            stream.WriteLine(p);
+            stream.Close();
            // MessageBox.Show("Person added", "RebateForm");
         }
 
@@ -54,11 +58,7 @@ namespace WindowsFormsApp2
 
         private void RebateForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FileStream fs = new FileStream(filename, FileMode.Append);
-            StreamWriter stream = new StreamWriter(fs);
-            foreach(Person p in ls)
-                stream.WriteLine(p);
-            stream.Close();
+            MessageBox.Show("Closing form.", "Goodbye");
         }
     }
 }

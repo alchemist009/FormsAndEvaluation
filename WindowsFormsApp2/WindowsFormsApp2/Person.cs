@@ -154,17 +154,17 @@ namespace WindowsFormsApp2
 
         public override string ToString()
         {
-            return FirstName + ", " +
-                MiddleInitial + ", " +
-                LastName + ", " +
-                AddressLine1 + ", " +
-                AddressLine2 + ", " +
-                City + ", " +
-                State + ", " +
-                ZipCode + ", " +
-                PhoneNumber + ", " +
-                Email + ", " +
-                Proof + ", " +
+            return FirstName + "\t" +
+                MiddleInitial + "\t" +
+                LastName + "\t" +
+                AddressLine1 + "\t" +
+                AddressLine2 + "\t" +
+                City + "\t" +
+                State + "\t" +
+                ZipCode + "\t" +
+                PhoneNumber + "\t" +
+                Email + "\t" +
+                Proof + "\t" +
                 DateReceived;
 
         }
