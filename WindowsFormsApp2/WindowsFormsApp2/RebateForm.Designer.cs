@@ -60,10 +60,10 @@
             // Add
             // 
             this.Add.Location = new System.Drawing.Point(545, 412);
-            this.Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Add.Margin = new System.Windows.Forms.Padding(2);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(56, 19);
-            this.Add.TabIndex = 11;
+            this.Add.TabIndex = 13;
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
@@ -71,7 +71,7 @@
             // FirstName
             // 
             this.FirstName.Location = new System.Drawing.Point(545, 32);
-            this.FirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FirstName.Margin = new System.Windows.Forms.Padding(2);
             this.FirstName.MaxLength = 20;
             this.FirstName.Name = "FirstName";
             this.FirstName.Size = new System.Drawing.Size(103, 20);
@@ -90,7 +90,7 @@
             // Middleinitial
             // 
             this.Middleinitial.Location = new System.Drawing.Point(709, 32);
-            this.Middleinitial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Middleinitial.Margin = new System.Windows.Forms.Padding(2);
             this.Middleinitial.MaxLength = 1;
             this.Middleinitial.Name = "Middleinitial";
             this.Middleinitial.Size = new System.Drawing.Size(24, 20);
@@ -119,7 +119,7 @@
             // AddLine1
             // 
             this.AddLine1.Location = new System.Drawing.Point(545, 97);
-            this.AddLine1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddLine1.Margin = new System.Windows.Forms.Padding(2);
             this.AddLine1.MaxLength = 35;
             this.AddLine1.Name = "AddLine1";
             this.AddLine1.Size = new System.Drawing.Size(103, 20);
@@ -138,7 +138,7 @@
             // Lastname
             // 
             this.Lastname.Location = new System.Drawing.Point(805, 32);
-            this.Lastname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Lastname.Margin = new System.Windows.Forms.Padding(2);
             this.Lastname.MaxLength = 20;
             this.Lastname.Name = "Lastname";
             this.Lastname.Size = new System.Drawing.Size(76, 20);
@@ -157,7 +157,7 @@
             // AddLine2
             // 
             this.AddLine2.Location = new System.Drawing.Point(709, 97);
-            this.AddLine2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddLine2.Margin = new System.Windows.Forms.Padding(2);
             this.AddLine2.MaxLength = 35;
             this.AddLine2.Name = "AddLine2";
             this.AddLine2.Size = new System.Drawing.Size(76, 20);
@@ -176,7 +176,7 @@
             // City
             // 
             this.City.Location = new System.Drawing.Point(805, 97);
-            this.City.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.City.Margin = new System.Windows.Forms.Padding(2);
             this.City.MaxLength = 25;
             this.City.Name = "City";
             this.City.Size = new System.Drawing.Size(56, 20);
@@ -195,7 +195,7 @@
             // State
             // 
             this.State.Location = new System.Drawing.Point(545, 170);
-            this.State.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.State.Margin = new System.Windows.Forms.Padding(2);
             this.State.MaxLength = 2;
             this.State.Name = "State";
             this.State.Size = new System.Drawing.Size(76, 20);
@@ -214,7 +214,7 @@
             // Zip
             // 
             this.Zip.Location = new System.Drawing.Point(709, 170);
-            this.Zip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Zip.Margin = new System.Windows.Forms.Padding(2);
             this.Zip.MaxLength = 9;
             this.Zip.Name = "Zip";
             this.Zip.Size = new System.Drawing.Size(76, 20);
@@ -233,11 +233,11 @@
             // Phone
             // 
             this.Phone.Location = new System.Drawing.Point(710, 240);
-            this.Phone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Phone.Margin = new System.Windows.Forms.Padding(2);
             this.Phone.MaxLength = 21;
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(75, 20);
-            this.Phone.TabIndex = 18;
+            this.Phone.TabIndex = 10;
             // 
             // label10
             // 
@@ -252,11 +252,11 @@
             // Email
             // 
             this.Email.Location = new System.Drawing.Point(545, 240);
-            this.Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Email.Margin = new System.Windows.Forms.Padding(2);
             this.Email.MaxLength = 60;
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(103, 20);
-            this.Email.TabIndex = 20;
+            this.Email.TabIndex = 9;
             // 
             // label11
             // 
@@ -271,38 +271,38 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(709, 320);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.TabIndex = 12;
             // 
             // Proof
             // 
             this.Proof.AllowDrop = true;
             this.Proof.FormattingEnabled = true;
             this.Proof.Location = new System.Drawing.Point(545, 319);
-            this.Proof.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Proof.Margin = new System.Windows.Forms.Padding(2);
             this.Proof.Name = "Proof";
             this.Proof.Size = new System.Drawing.Size(92, 21);
-            this.Proof.TabIndex = 9;
+            this.Proof.TabIndex = 11;
             // 
             // Modify
             // 
             this.Modify.Location = new System.Drawing.Point(677, 412);
-            this.Modify.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Modify.Margin = new System.Windows.Forms.Padding(2);
             this.Modify.Name = "Modify";
             this.Modify.Size = new System.Drawing.Size(56, 19);
-            this.Modify.TabIndex = 12;
+            this.Modify.TabIndex = 14;
             this.Modify.Text = "Modify";
             this.Modify.UseVisualStyleBackColor = true;
             // 
             // Delete
             // 
             this.Delete.Location = new System.Drawing.Point(805, 412);
-            this.Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Delete.Margin = new System.Windows.Forms.Padding(2);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(56, 19);
-            this.Delete.TabIndex = 13;
+            this.Delete.TabIndex = 15;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
             // 
@@ -312,7 +312,7 @@
             this.listBox1.Location = new System.Drawing.Point(38, 0);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(439, 459);
-            this.listBox1.TabIndex = 22;
+            this.listBox1.TabIndex = 16;
             // 
             // RebateForm
             // 
@@ -347,7 +347,7 @@
             this.Controls.Add(this.FirstName);
             this.Controls.Add(this.Add);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RebateForm";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RebateForm_FormClosing);
