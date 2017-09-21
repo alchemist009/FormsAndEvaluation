@@ -39,7 +39,7 @@ namespace WindowsFormsApp2
                 DateReceived = default(DateTime)
             };
             ls.Add(p);
-            MessageBox.Show("Person added", "RebateForm");
+           // MessageBox.Show("Person added", "RebateForm");
         }
 
         private void RebateForm_Load(object sender, EventArgs e)
