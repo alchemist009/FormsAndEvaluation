@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\Properties"
   ],
-  "SelectedNode": "\\Person.cs",
+  "SelectedNode": "\\RebateForm.Designer.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -44,6 +44,19 @@ namespace WindowsFormsApp2
             stream.WriteLine(p);
             stream.Close();
            // MessageBox.Show("Person added", "RebateForm");
+
+            using (System.IO.StreamReader sr = new System.IO.StreamReader(@"person.txt"))
+            {
+                while (!sr.EndOfStream)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                     string strListItem = sr.ReadLine();
+                    if (!String.IsNullOrEmpty(strListItem))
+                       listBox1.Items.Add(strListItem);
+                    }
+                }
+   }
         }
 
         private void RebateForm_Load(object sender, EventArgs e)
@@ -60,5 +73,6 @@ namespace WindowsFormsApp2
         {
             MessageBox.Show("Closing form.", "Goodbye");
         }
+
     }
 }
