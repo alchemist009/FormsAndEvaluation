@@ -52,21 +52,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Proof = new System.Windows.Forms.ComboBox();
-            this.Modify = new System.Windows.Forms.Button();
+            this.Clear = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // Add
+            // Submit
             // 
             this.Add.Location = new System.Drawing.Point(545, 412);
             this.Add.Margin = new System.Windows.Forms.Padding(2);
-            this.Add.Name = "Add";
+            this.Add.Name = "Submit";
             this.Add.Size = new System.Drawing.Size(56, 19);
             this.Add.TabIndex = 13;
-            this.Add.Text = "Add";
+            this.Add.Text = "Submit";
             this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
+            this.Add.Click += new System.EventHandler(this.Submit_Click);
             // 
             // FirstName
             // 
@@ -286,15 +286,16 @@
             this.Proof.Size = new System.Drawing.Size(92, 21);
             this.Proof.TabIndex = 11;
             // 
-            // Modify
+            // Clear
             // 
-            this.Modify.Location = new System.Drawing.Point(677, 412);
-            this.Modify.Margin = new System.Windows.Forms.Padding(2);
-            this.Modify.Name = "Modify";
-            this.Modify.Size = new System.Drawing.Size(56, 19);
-            this.Modify.TabIndex = 14;
-            this.Modify.Text = "Modify";
-            this.Modify.UseVisualStyleBackColor = true;
+            this.Clear.Location = new System.Drawing.Point(677, 412);
+            this.Clear.Margin = new System.Windows.Forms.Padding(2);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(56, 19);
+            this.Clear.TabIndex = 14;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Delete
             // 
@@ -305,6 +306,7 @@
             this.Delete.TabIndex = 15;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // listBox1
             // 
@@ -321,7 +323,7 @@
             this.ClientSize = new System.Drawing.Size(916, 466);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Delete);
-            this.Controls.Add(this.Modify);
+            this.Controls.Add(this.Clear);
             this.Controls.Add(this.Proof);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label11);
@@ -383,7 +385,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox Proof;
-        private System.Windows.Forms.Button Modify;
+        private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.ListBox listBox1;
     }

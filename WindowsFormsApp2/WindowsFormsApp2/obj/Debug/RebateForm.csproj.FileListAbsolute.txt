@@ -36,3 +36,4 @@ C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\Window
 C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
 C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.RebateForm.resources
 C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\RebateForm.csproj.GenerateResource.Cache
+C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\RebateForm.csproj.CoreCompileInputs.cache

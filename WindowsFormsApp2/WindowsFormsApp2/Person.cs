@@ -168,5 +168,12 @@ namespace WindowsFormsApp2
                 DateReceived;
 
         }
+
+        public string GetInfo() {
+            return FirstName + " " + 
+                MiddleInitial + " " +
+                LastName + "\t" +
+                PhoneNumber;
+        }
     }
 }
