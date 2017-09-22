@@ -14,13 +14,14 @@ namespace WindowsFormsApp2
     public partial class RebateForm : Form
     {
 
+        string FILE_NAME = @"person.txt";
+
         public RebateForm()
         {
             InitializeComponent();
         }
 
         //List<Person> ls = new List<Person>();
-        string filename = @"person.txt";
 
         private void Submit_Click(object sender, EventArgs e)
         {
@@ -40,7 +41,7 @@ namespace WindowsFormsApp2
                 DateReceived = string.IsNullOrEmpty(dateBox.Text)? DateTime.Now.ToString("yyyy-MM-dd") : dateBox.Text
             };
            // ls.Add(p);
-            FileStream fs = new FileStream(filename, FileMode.Append);
+            FileStream fs = new FileStream(FILE_NAME, FileMode.Append);
             StreamWriter stream = new StreamWriter(fs);
             stream.WriteLine(p);
             stream.Close();
@@ -79,7 +80,7 @@ namespace WindowsFormsApp2
             Proof.Items.Add("Yes");
             Proof.Items.Add("No");
             try {
-                using (System.IO.StreamReader sr = new System.IO.StreamReader(@"person.txt"))
+                using (System.IO.StreamReader sr = new System.IO.StreamReader(FILE_NAME))
                 {
                     while (!sr.EndOfStream)
                     {
@@ -103,7 +104,7 @@ namespace WindowsFormsApp2
                     }
                 }
             } catch (FileNotFoundException ex) {
-                File.Create(@"person.txt");
+                File.Create(FILE_NAME);
             }
         }
 
@@ -137,6 +138,26 @@ namespace WindowsFormsApp2
                     listBox1.Items.Add(p.GetInfo());
                 }
             }
+        }
+    
+        private void listBox1_IndexChanged(object sender, EventArgs e) {
+            int index = listBox1.SelectedIndex;
+            string line = File.ReadAllLines(FILE_NAME)[index];
+            string[] split = line.Split(new char[]{'\t'});
+            Person p = Person.GetObject(split);
+            FirstName.Text = p.FirstName;
+            Middleinitial.Text = p.MiddleInitial + "";
+            Lastname.Text = p.LastName;
+            AddLine1.Text = p.AddressLine1;
+            AddLine2.Text = p.AddressLine2;
+            City.Text = p.City;
+            State.Text = p.State;
+            Zip.Text = p.ZipCode;
+            Email.Text = p.Email;
+            Phone.Text = p.PhoneNumber;
+            Proof.SelectedIndex = p.Proof ? 0 : 1;
+            dateBox.Text = p.DateReceived;
+
         }
     }
 }

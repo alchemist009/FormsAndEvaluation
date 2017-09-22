@@ -175,5 +175,22 @@ namespace WindowsFormsApp2
                 LastName + "\t" +
                 PhoneNumber;
         }
+
+        public static Person GetObject(string[] str) {
+            return new Person {
+                FirstName = str[0],
+                MiddleInitial = str[1][0],
+                LastName = str[2],
+                AddressLine1 = str[3],
+                AddressLine2 = str[4],
+                City = str[5],
+                State = str[6],
+                ZipCode = str[7],
+                PhoneNumber = str[8],
+                Email = str[9],
+                Proof = str[10] == "True" ? true: false,
+                DateReceived = str[11]
+            };
+        } 
     }
 }

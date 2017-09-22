@@ -1,2 +1,6 @@
 Shriroop	N	Joshi	3000 Northside Blvd	Apr 2-232A	Richardson	TX	75080	4693288804	shriroop.joshi@gmail.com	True	9/22/2017
 Gunjan	T	Tomer	3000 Northside Blvd	Apt 2-232A	Richardson	TX	75080	4692168427	alchemist009@gmail.com	True	20170922
+Antriksh	A	Agarwal	3000 Northside Blvd.	2-232A	Richardson	TX	75080	4693289498	Antriksh.Agrawal1@utdallas.edu	True	09202017
+Akash	P	Deo	3000 Northside Blvd.	2-232A	Richardson	TX	75080	4698793964	apa160330@utdallas.edu	False	09212017
+Akash	P	Deo	3000 Northside Blvd.	2-232A	Richardson	MA	75080	4698793964	apa160330@utdallas.edu	False	09212017
+Shriroop	N	Joshi	3000 Northside Blvd	Apr 2-232A	Richardson	KY	75080	4693288804	shriroop.joshi@gmail.com	True	9/22/2017
