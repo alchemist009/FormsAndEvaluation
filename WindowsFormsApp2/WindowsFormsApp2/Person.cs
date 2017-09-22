@@ -12,7 +12,7 @@ namespace WindowsFormsApp2
             
         private bool _proof;
 
-        private DateTime _date;
+        private string _date;
 
         public string FirstName
         {
@@ -140,7 +140,7 @@ namespace WindowsFormsApp2
             }
         }
 
-        public DateTime DateReceived
+        public string DateReceived
         {
             get
             {

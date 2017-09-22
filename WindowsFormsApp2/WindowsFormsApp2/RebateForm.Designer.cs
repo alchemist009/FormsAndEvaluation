@@ -50,7 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateBox = new System.Windows.Forms.TextBox();
             this.Proof = new System.Windows.Forms.ComboBox();
             this.Clear = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
@@ -268,13 +268,15 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "Proof of Purchase";
             // 
-            // dateTimePicker1
+            // dateBox
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(709, 320);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dateBox.Location = new System.Drawing.Point(709, 320);
+            this.dateBox.Margin = new System.Windows.Forms.Padding(2);
+            this.dateBox.MaxLength = 10;
+            this.dateBox.Name = "dateBox";
+            this.dateBox.Size = new System.Drawing.Size(150, 20);
+            this.dateBox.TabIndex = 12;
+            
             // 
             // Proof
             // 
@@ -325,7 +327,7 @@
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.Proof);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.label10);
@@ -383,7 +385,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox dateBox;
         private System.Windows.Forms.ComboBox Proof;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Delete;
