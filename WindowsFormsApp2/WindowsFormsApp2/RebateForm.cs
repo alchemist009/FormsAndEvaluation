@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
 {
     public partial class RebateForm : Form
     {
-
+        bool modifyFlag = false;
         string FILE_NAME = @"person.txt";
 
         public RebateForm()
@@ -26,12 +26,13 @@ namespace WindowsFormsApp2
         private void Submit_Click(object sender, EventArgs e)
         {   
             bool foundFlag = false;
+            int counter = 0;
             string testString = FirstName.Text + "\t" + Middleinitial.Text + "\t" + Lastname.Text; 
-             if(File.ReadAllText(FILE_NAME).Contains(testString))
-                {
-                     foundFlag = true;
-                }
-             if(!foundFlag)
+            if(File.ReadAllText(FILE_NAME).Contains(testString))
+            {
+                 foundFlag = true;
+            }
+             if(!foundFlag || modifyFlag)
             {
             Person p = new Person()
             {
@@ -51,6 +52,7 @@ namespace WindowsFormsApp2
            // ls.Add(p);
             FileStream fs = new FileStream(FILE_NAME, FileMode.Append);
             StreamWriter stream = new StreamWriter(fs);
+            
             stream.WriteLine(p);
             stream.Close();
            // MessageBox.Show("Person added", "RebateForm");
@@ -78,10 +80,34 @@ namespace WindowsFormsApp2
             Proof.Items.Clear();
             Proof.Items.Add("Yes");
             Proof.Items.Add("No");
+
+            modifyFlag = false;
         }
 
         private void Delete_Click(object sender, EventArgs e) {
 
+            int index = listBox1.SelectedIndex;
+            string[] lines = File.ReadAllLines(FILE_NAME);
+            string[] newlines = new string[lines.Length - 1];
+            //iint lineCount = lines.Length;
+            int j = 0;
+            for(int i=0; i< lines.Length; i++){
+                if(i != index){
+                    newlines[j++] = lines[i];
+                }
+                           
+            }
+            File.WriteAllLines(FILE_NAME, newlines);   
+            RefreshListBox();
+        }
+
+        private void RefreshListBox() {
+            listBox1.Items.Clear();
+            string[] lines = File.ReadAllLines(FILE_NAME);
+            for(int i = 0; i < lines.Length; ++i) {
+                Person p = Person.GetObject(lines[i].Split(new char[] {'\t'}));
+                listBox1.Items.Add(p.GetInfo());
+            }
         }
 
         private void RebateForm_Load(object sender, EventArgs e)
@@ -92,31 +118,9 @@ namespace WindowsFormsApp2
 
             Proof.Items.Add("Yes");
             Proof.Items.Add("No");
-            try {
-                using (System.IO.StreamReader sr = new System.IO.StreamReader(FILE_NAME))
-                {
-                    while (!sr.EndOfStream)
-                    {
-                        string line = sr.ReadLine();
-                        string[] info = line.Split(new char[]{'\t'});
-                        Person p = new Person(){
-                            FirstName = info[0],
-                            MiddleInitial = info[1][0],
-                            LastName = info[2],
-                            AddressLine1 = info[3],
-                            AddressLine2 = info[4],
-                            City = info[5],
-                            State = info[6],
-                            ZipCode = info[7],
-                            Email = info[9],
-                            PhoneNumber = info[8],
-                            Proof = info[10] == "True"? true: false,
-                            DateReceived = info[11]
-                        };
-                        listBox1.Items.Add(p.GetInfo());
-                    }
-                }
-            } catch (FileNotFoundException ex) {
+            if(File.Exists(FILE_NAME)) {
+                RefreshListBox();
+            } else {
                 File.Create(FILE_NAME);
             }
         }
@@ -126,36 +130,9 @@ namespace WindowsFormsApp2
             MessageBox.Show("Closing form.", "Goodbye");
         }
         
-
-        private void Box_populator(object sender, DoWorkEventArgs e) {
-            //ThreadSafe(listBox1.Items.Clear);
-            //listBox1.Items.Clear();
-            using (System.IO.StreamReader sr = new System.IO.StreamReader(@"person.txt"))
-            {
-                while (!sr.EndOfStream)
-                {
-                    string[] info = sr.ReadLine().Split(new char[]{'\t'});
-                    Person p = new Person(){
-                        FirstName = info[0],
-                        MiddleInitial = info[1][0],
-                        LastName = info[2],
-                        AddressLine1 = info[3],
-                        AddressLine2 = info[4],
-                        City = info[5],
-                        State = info[6],
-                        ZipCode = info[7],
-                        Email = info[8],
-                        PhoneNumber = info[9],
-                        Proof = Convert.ToBoolean(info[9]),
-                        //DateReceived = Convert.ToDateTime(info[10])
-                    };
-                    listBox1.Items.Add(p.GetInfo());
-                }
-            }
-        }
-    
         private void listBox1_IndexChanged(object sender, EventArgs e) {
             int index = listBox1.SelectedIndex;
+            modifyFlag = true;
             string line = File.ReadAllLines(FILE_NAME)[index];
             string[] split = line.Split(new char[]{'\t'});
             Person p = Person.GetObject(split);
