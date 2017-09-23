@@ -24,7 +24,15 @@ namespace WindowsFormsApp2
         //List<Person> ls = new List<Person>();
 
         private void Submit_Click(object sender, EventArgs e)
-        {
+        {   
+            bool foundFlag = false;
+            string testString = FirstName.Text + "\t" + Middleinitial.Text + "\t" + Lastname.Text; 
+             if(File.ReadAllText(FILE_NAME).Contains(testString))
+                {
+                     foundFlag = true;
+                }
+             if(!foundFlag)
+            {
             Person p = new Person()
             {
                 FirstName = FirstName.Text,
@@ -48,6 +56,11 @@ namespace WindowsFormsApp2
            // MessageBox.Show("Person added", "RebateForm");
 
             listBox1.Items.Add(p.GetInfo());
+            }
+
+            else{
+                MessageBox.Show("Record already exists", "Error");
+            }
         }
 
         private void Clear_Click(object sender, EventArgs e) {
@@ -112,6 +125,7 @@ namespace WindowsFormsApp2
         {
             MessageBox.Show("Closing form.", "Goodbye");
         }
+        
 
         private void Box_populator(object sender, DoWorkEventArgs e) {
             //ThreadSafe(listBox1.Items.Clear);
