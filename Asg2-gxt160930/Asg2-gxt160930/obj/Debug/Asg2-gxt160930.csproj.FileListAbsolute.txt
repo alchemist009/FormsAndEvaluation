@@ -7,3 +7,12 @@ C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\Window
 C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Asg2gxt160930.Properties.Resources.resources
 C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Asg2-gxt160930.exe
 C:\Users\gxt160930\Source\Repos\HumanComputerInteraction\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\Asg2-gxt160930.pdb
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.exe.config
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.exe
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.pdb
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2gxt160930.Properties.Resources.resources
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2.RebateForm.resources
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.GenerateResource.Cache
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.CoreCompileInputs.cache
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.exe
+C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.pdb
