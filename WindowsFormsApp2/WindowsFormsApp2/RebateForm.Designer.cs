@@ -336,7 +336,7 @@
             this.date.Location = new System.Drawing.Point(661, 320);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(200, 20);
-            this.date.TabIndex = 26;
+            this.date.TabIndex = 12;
             // 
             // label12
             // 

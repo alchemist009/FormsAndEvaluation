@@ -20,7 +20,7 @@ namespace WindowsFormsApp2
         public RebateForm()
         {
             InitializeComponent();
-            FirstName.TextChanged += new System.EventHandler(this.FirstName_TextChanged);
+            FirstName.TextChanged += new EventHandler(this.FirstName_TextChanged);
             Phone.KeyPress += new KeyPressEventHandler(this.Phone_KeyPress);
             Zip.KeyPress += new KeyPressEventHandler(this.Zip_KeyPress);
             FirstName.KeyPress += new KeyPressEventHandler(this.FirstName_KeyPress);
@@ -36,12 +36,12 @@ namespace WindowsFormsApp2
             Regex rgx = new Regex(@"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$");
 
             bool foundFlag = false;
-            string testString = FirstName.Text + "\t" + Middleinitial.Text + "\t" + Lastname.Text; 
-            if(File.ReadAllText(FILE_NAME).Contains(testString))
+            string testString = FirstName.Text + "\t" + Middleinitial.Text + "\t" + Lastname.Text;
+            if (File.ReadAllText(FILE_NAME).Contains(testString))
             {
-                 foundFlag = true;
+                foundFlag = true;
             }
-            
+
             if (!foundFlag || modifyFlag)
             {
                 Person p = new Person()
@@ -58,13 +58,13 @@ namespace WindowsFormsApp2
                     Email = Email.Text,
                     Proof = Proof.SelectedIndex == 0 ? true : false,
                     DateReceived = date.Value.ToString()
-            };
-           // ls.Add(p);
-            FileStream fs = new FileStream(FILE_NAME, FileMode.Append);
-            StreamWriter stream = new StreamWriter(fs);
+                };
+                // ls.Add(p);
+                FileStream fs = new FileStream(FILE_NAME, FileMode.Append);
+                StreamWriter stream = new StreamWriter(fs);
 
-            if (rgx.IsMatch(Email.Text))
-            {
+                if (rgx.IsMatch(Email.Text))
+                {
                     stream.WriteLine(p);
                     EndTime.Text = "End Time: " + DateTime.Now.ToString();
                     listBox1.Items.Add(p.GetInfo());
@@ -72,12 +72,12 @@ namespace WindowsFormsApp2
                 }
 
                 else
-            {
+                {
                     MessageBox.Show("Please enter a valid Email", "Error");
 
-            }
+                }
 
-            stream.Close();
+                stream.Close();
 
             }
             else
@@ -105,7 +105,8 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void Clear_Click(object sender, EventArgs e) {
+        private void Clear_Click(object sender, EventArgs e)
+        {
             FirstName.Clear();
             Middleinitial.Clear();
             Lastname.Clear();
@@ -124,44 +125,52 @@ namespace WindowsFormsApp2
             modifyFlag = false;
         }
 
-        private void Delete_Click(object sender, EventArgs e) {
+        private void Delete_Click(object sender, EventArgs e)
+        {
 
             int index = listBox1.SelectedIndex;
             string[] lines = File.ReadAllLines(FILE_NAME);
             string[] newlines = new string[lines.Length - 1];
             //iint lineCount = lines.Length;
             int j = 0;
-            for(int i=0; i< lines.Length; i++){
-                if(i != index){
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if (i != index)
+                {
                     newlines[j++] = lines[i];
                 }
-                           
+
             }
-            File.WriteAllLines(FILE_NAME, newlines);   
+            File.WriteAllLines(FILE_NAME, newlines);
             RefreshListBox();
         }
 
-        private void RefreshListBox() {
+        private void RefreshListBox()
+        {
             listBox1.Items.Clear();
             string[] lines = File.ReadAllLines(FILE_NAME);
-            for(int i = 0; i < lines.Length; ++i) {
-                Person p = Person.GetObject(lines[i].Split(new char[] {'\t'}));
+            for (int i = 0; i < lines.Length; ++i)
+            {
+                Person p = Person.GetObject(lines[i].Split(new char[] { '\t' }));
                 listBox1.Items.Add(p.GetInfo());
             }
         }
 
         private void RebateForm_Load(object sender, EventArgs e)
         {
-            //int iHeight = Screen.PrimaryScreen.WorkingArea.Height - this.Height;
-            //this.Height += iHeight;
-            //this.CenterToScreen();
+            int iHeight = Screen.PrimaryScreen.WorkingArea.Height - this.Height;
+            this.Height += iHeight;
+            this.CenterToScreen();
 
             Proof.Items.Add("Yes");
             Proof.Items.Add("No");
-            if(File.Exists(FILE_NAME)) {
+            if (File.Exists(FILE_NAME))
+            {
                 RefreshListBox();
-            } else {
-                File.Create(FILE_NAME);
+            }
+            else
+            {
+                File.Create(FILE_NAME).Close();
             }
         }
 
@@ -169,12 +178,13 @@ namespace WindowsFormsApp2
         {
             //MessageBox.Show("Closing form.", "Goodbye");
         }
-        
-        private void listBox1_IndexChanged(object sender, EventArgs e) {
+
+        private void listBox1_IndexChanged(object sender, EventArgs e)
+        {
             int index = listBox1.SelectedIndex;
             modifyFlag = true;
             string line = File.ReadAllLines(FILE_NAME)[index];
-            string[] split = line.Split(new char[]{'\t'});
+            string[] split = line.Split(new char[] { '\t' });
             Person p = Person.GetObject(split);
             FirstName.Text = p.FirstName;
             Middleinitial.Text = p.MiddleInitial + "";
@@ -220,7 +230,6 @@ namespace WindowsFormsApp2
             {
                 e.Handled = true; //Reject the input
             }
-            Zip.MaxLength = 5;
         }
 
         private void FirstName_KeyPress(object sender, KeyPressEventArgs e)
@@ -233,7 +242,6 @@ namespace WindowsFormsApp2
             {
                 e.Handled = false; //Reject the input
             }
-            FirstName.MaxLength = 15;
         }
 
         private void MiddleInitial_KeyPress(object sender, KeyPressEventArgs e)
@@ -246,7 +254,6 @@ namespace WindowsFormsApp2
             {
                 e.Handled = false; //Reject the input
             }
-            Middleinitial.MaxLength = 1;
         }
 
 
@@ -260,7 +267,6 @@ namespace WindowsFormsApp2
             {
                 e.Handled = false; //Reject the input
             }
-            Lastname.MaxLength = 15;
         }
 
         private void State_KeyPress(object sender, KeyPressEventArgs e)
@@ -273,7 +279,6 @@ namespace WindowsFormsApp2
             {
                 e.Handled = false; //Reject the input
             }
-            State.MaxLength = 2;
         }
 
 
@@ -288,23 +293,6 @@ namespace WindowsFormsApp2
             {
                 return false;
             }
-        }
-
-
-        private void Date_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //var regex = new Regex(@"[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9][0-9][0-9]");
-
-            //if(regex.IsMatch(dateBox.Text.ToString()))
-            //{
-            //    e.Handled = true;
-            //}
-            //else
-            //{
-            //    e.Handled = false;
-            //}
-
-           
         }
 
     }
