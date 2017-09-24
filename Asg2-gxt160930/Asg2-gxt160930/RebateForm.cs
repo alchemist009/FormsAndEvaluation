@@ -16,7 +16,7 @@
  * All fields in the record populated from the listBox can be modified and written back to the file.
  * A new record with the same Name as an existing record can't be added whether new or modification of an old one.
  * The Delete button deletes the selected record from the listBox and the text file.
- * 
+ * Limits on string lengths are set as required by the assignment question
 **/
 
 using System;
