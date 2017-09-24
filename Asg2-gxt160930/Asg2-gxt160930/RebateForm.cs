@@ -1,7 +1,7 @@
 ﻿/**
  * Submission for CS6326 Assignment 2: Rebate Form
  * 
- * author: Gunjan Tomer
+ * @author: Gunjan Tomer
  * 
  * Main file: RebateForm.cs
  * Object creation: Person.cs
@@ -17,6 +17,7 @@
  * A new record with the same Name as an existing record can't be added whether new or modification of an old one.
  * The Delete button deletes the selected record from the listBox and the text file.
  * Limits on string lengths are set as required by the assignment question
+ * 
 **/
 
 using System;
