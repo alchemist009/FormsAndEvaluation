@@ -50,18 +50,21 @@
             this.label10 = new System.Windows.Forms.Label();
             this.Email = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateBox = new System.Windows.Forms.TextBox();
             this.Proof = new System.Windows.Forms.ComboBox();
             this.Clear = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.StartTime = new System.Windows.Forms.Label();
+            this.EndTime = new System.Windows.Forms.Label();
+            this.date = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Submit
+            // Add
             // 
             this.Add.Location = new System.Drawing.Point(545, 412);
             this.Add.Margin = new System.Windows.Forms.Padding(2);
-            this.Add.Name = "Submit";
+            this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(56, 19);
             this.Add.TabIndex = 13;
             this.Add.Text = "Submit";
@@ -268,16 +271,6 @@
             this.label11.TabIndex = 21;
             this.label11.Text = "Proof of Purchase";
             // 
-            // dateBox
-            // 
-            this.dateBox.Location = new System.Drawing.Point(709, 320);
-            this.dateBox.Margin = new System.Windows.Forms.Padding(2);
-            this.dateBox.MaxLength = 10;
-            this.dateBox.Name = "dateBox";
-            this.dateBox.Size = new System.Drawing.Size(150, 20);
-            this.dateBox.TabIndex = 12;
-            
-            // 
             // Proof
             // 
             this.Proof.AllowDrop = true;
@@ -315,20 +308,58 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(38, 0);
             this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(439, 459);
             this.listBox1.TabIndex = 16;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_IndexChanged);
+            // 
+            // StartTime
+            // 
+            this.StartTime.AutoSize = true;
+            this.StartTime.Location = new System.Drawing.Point(545, 461);
+            this.StartTime.Name = "StartTime";
+            this.StartTime.Size = new System.Drawing.Size(61, 13);
+            this.StartTime.TabIndex = 24;
+            this.StartTime.Text = "Start Time: ";
+            // 
+            // EndTime
+            // 
+            this.EndTime.AutoSize = true;
+            this.EndTime.Location = new System.Drawing.Point(745, 461);
+            this.EndTime.Name = "EndTime";
+            this.EndTime.Size = new System.Drawing.Size(55, 13);
+            this.EndTime.TabIndex = 25;
+            this.EndTime.Text = "End Time:";
+            // 
+            // date
+            // 
+            this.date.Location = new System.Drawing.Point(661, 320);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(200, 20);
+            this.date.TabIndex = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(658, 294);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 13);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Date Received";
             // 
             // RebateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 466);
+            this.ClientSize = new System.Drawing.Size(916, 508);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.date);
+            this.Controls.Add(this.EndTime);
+            this.Controls.Add(this.StartTime);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.Proof);
-            this.Controls.Add(this.dateBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Email);
             this.Controls.Add(this.label10);
@@ -386,11 +417,14 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox dateBox;
         private System.Windows.Forms.ComboBox Proof;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label StartTime;
+        private System.Windows.Forms.Label EndTime;
+        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.Label label12;
     }
 }
 
