@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp2
+﻿namespace Asg2
 {
     partial class RebateForm
     {
