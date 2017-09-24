@@ -18,6 +18,13 @@
  * The Delete button deletes the selected record from the listBox and the text file.
  * Limits on string lengths are set as required by the assignment question
  * 
+ * 
+ * 
+ * Some guidelines for using the form:
+ * 
+ * Clicking on Delete without any previously existing records will throw an error.
+ * Clicking on the Submit button after first clicking on a listBox entry to populate the text fields and then deleting it will cause a crash.
+ * 
 **/
 
 using System;
