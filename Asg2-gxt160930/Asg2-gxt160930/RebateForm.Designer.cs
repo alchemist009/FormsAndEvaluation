@@ -53,11 +53,13 @@
             this.Proof = new System.Windows.Forms.ComboBox();
             this.Clear = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.StartTime = new System.Windows.Forms.Label();
-            this.EndTime = new System.Windows.Forms.Label();
+            this.Records = new System.Windows.Forms.ListBox();
+            this.StartTimeLabel = new System.Windows.Forms.Label();
+            this.EndTimeLabel = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
+            this.StartText = new System.Windows.Forms.TextBox();
+            this.EndText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Add
@@ -303,33 +305,33 @@
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // listBox1
+            // Records
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(38, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(439, 459);
-            this.listBox1.TabIndex = 16;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_IndexChanged);
+            this.Records.FormattingEnabled = true;
+            this.Records.Location = new System.Drawing.Point(38, 0);
+            this.Records.Name = "Records";
+            this.Records.ScrollAlwaysVisible = true;
+            this.Records.Size = new System.Drawing.Size(439, 459);
+            this.Records.TabIndex = 16;
+            this.Records.SelectedIndexChanged += new System.EventHandler(this.listBox1_IndexChanged);
             // 
-            // StartTime
+            // StartTimeLabel
             // 
-            this.StartTime.AutoSize = true;
-            this.StartTime.Location = new System.Drawing.Point(545, 461);
-            this.StartTime.Name = "StartTime";
-            this.StartTime.Size = new System.Drawing.Size(61, 13);
-            this.StartTime.TabIndex = 24;
-            this.StartTime.Text = "Start Time: ";
+            this.StartTimeLabel.AutoSize = true;
+            this.StartTimeLabel.Location = new System.Drawing.Point(545, 461);
+            this.StartTimeLabel.Name = "StartTimeLabel";
+            this.StartTimeLabel.Size = new System.Drawing.Size(61, 13);
+            this.StartTimeLabel.TabIndex = 24;
+            this.StartTimeLabel.Text = "Start Time: ";
             // 
-            // EndTime
+            // EndTimeLabel
             // 
-            this.EndTime.AutoSize = true;
-            this.EndTime.Location = new System.Drawing.Point(745, 461);
-            this.EndTime.Name = "EndTime";
-            this.EndTime.Size = new System.Drawing.Size(55, 13);
-            this.EndTime.TabIndex = 25;
-            this.EndTime.Text = "End Time:";
+            this.EndTimeLabel.AutoSize = true;
+            this.EndTimeLabel.Location = new System.Drawing.Point(745, 461);
+            this.EndTimeLabel.Name = "EndTimeLabel";
+            this.EndTimeLabel.Size = new System.Drawing.Size(55, 13);
+            this.EndTimeLabel.TabIndex = 25;
+            this.EndTimeLabel.Text = "End Time:";
             // 
             // date
             // 
@@ -347,16 +349,32 @@
             this.label12.TabIndex = 27;
             this.label12.Text = "Date Received";
             // 
+            // StartText
+            // 
+            this.StartText.Location = new System.Drawing.Point(548, 477);
+            this.StartText.Name = "StartText";
+            this.StartText.Size = new System.Drawing.Size(100, 20);
+            this.StartText.TabIndex = 28;
+            // 
+            // EndText
+            // 
+            this.EndText.Location = new System.Drawing.Point(748, 477);
+            this.EndText.Name = "EndText";
+            this.EndText.Size = new System.Drawing.Size(100, 20);
+            this.EndText.TabIndex = 29;
+            // 
             // RebateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 508);
+            this.Controls.Add(this.EndText);
+            this.Controls.Add(this.StartText);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.date);
-            this.Controls.Add(this.EndTime);
-            this.Controls.Add(this.StartTime);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.EndTimeLabel);
+            this.Controls.Add(this.StartTimeLabel);
+            this.Controls.Add(this.Records);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.Proof);
@@ -420,11 +438,13 @@
         private System.Windows.Forms.ComboBox Proof;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label StartTime;
-        private System.Windows.Forms.Label EndTime;
+        private System.Windows.Forms.ListBox Records;
+        private System.Windows.Forms.Label StartTimeLabel;
+        private System.Windows.Forms.Label EndTimeLabel;
         private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox StartText;
+        private System.Windows.Forms.TextBox EndText;
     }
 }
 

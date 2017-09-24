@@ -2,7 +2,7 @@
 {
     class Person
     {
-        private string _firstname, _lastname, _addr1, _addr2, _city, _state, _email, _zip, _phone;
+        private string _firstname, _lastname, _addr1, _addr2, _city, _state, _email, _zip, _phone, _starttime, _endtime;
             
         private bool _proof;
 
@@ -146,6 +146,30 @@
             }
         }
 
+        public string TimeStarted
+        {
+            get
+            {
+                return _starttime;
+            }
+            set
+            {
+                _starttime = value;
+            }
+        }
+
+        public string TimeEnded
+        {
+            get
+            {
+                return _endtime;
+            }
+            set
+            {
+                _endtime = value;
+            }
+        }
+
         public override string ToString()
         {
             return FirstName + "\t" +
@@ -159,7 +183,9 @@
                 PhoneNumber + "\t" +
                 Email + "\t" +
                 Proof + "\t" +
-                DateReceived;
+                DateReceived + "\t" +
+                TimeStarted + "\t" +
+                TimeEnded;
 
         }
 
@@ -183,7 +209,9 @@
                 PhoneNumber = str[8],
                 Email = str[9],
                 Proof = str[10] == "True" ? true: false,
-                DateReceived = str[11]
+                DateReceived = str[11],
+                TimeStarted = str[12],
+                TimeEnded = str[13]
             };
         } 
     }

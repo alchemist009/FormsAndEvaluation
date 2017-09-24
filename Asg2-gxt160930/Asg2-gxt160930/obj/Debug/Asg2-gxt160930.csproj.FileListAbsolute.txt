@@ -16,3 +16,13 @@ C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt
 C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.CoreCompileInputs.cache
 C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.exe
 C:\Users\gxt160930\source\repos\HumanComputerInteraction\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.pdb
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.exe.config
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.exe
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.pdb
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2gxt160930.Properties.Resources.resources
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2.RebateForm.resources
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.GenerateResource.Cache
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.CoreCompileInputs.cache
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.exe
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.pdb
+D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csprojResolveAssemblyReference.cache
