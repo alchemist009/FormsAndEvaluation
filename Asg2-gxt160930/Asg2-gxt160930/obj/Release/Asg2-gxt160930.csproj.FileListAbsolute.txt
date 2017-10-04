@@ -7,3 +7,12 @@ D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2-gxt160930.csproj.Gene
 D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2-gxt160930.csproj.CoreCompileInputs.cache
 D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2-gxt160930.exe
 D:\HCIAssg2\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2-gxt160930.pdb
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\bin\Release\Asg2-gxt160930.exe.config
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\bin\Release\Asg2-gxt160930.exe
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\bin\Release\Asg2-gxt160930.pdb
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2gxt160930.Properties.Resources.resources
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2.RebateForm.resources
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2-gxt160930.csproj.GenerateResource.Cache
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2-gxt160930.csproj.CoreCompileInputs.cache
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2-gxt160930.exe
+C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Release\Asg2-gxt160930.pdb

@@ -38,6 +38,10 @@ namespace Asg2
     {
         bool modifyFlag = false;                        //Flag used to check if user wants to modify existing record or add a new one
         string FILE_NAME = @"CS6326Asg2.txt";           //Text file to store records
+        int back_counter = 0;
+        string DETAIL_FILE = @"Params.txt";
+        int lineCount = 0;
+
 
         public RebateForm()
         {
@@ -49,6 +53,16 @@ namespace Asg2
             Lastname.KeyPress += new KeyPressEventHandler(this.LastName_KeyPress);          //Event handler for validation of LastName
             Middleinitial.KeyPress += new KeyPressEventHandler(this.MiddleInitial_KeyPress);        //Event handler for validation of MiddleInitial
             State.KeyPress += new KeyPressEventHandler(this.State_KeyPress);            //Event handler for validation of State
+            FirstName.KeyUp += new KeyEventHandler(this.FirstName_KeyUp);
+            Middleinitial.KeyUp += new KeyEventHandler(this.MiddleInitial_KeyUp);
+            Lastname.KeyUp += new KeyEventHandler(this.LastName_KeyUp);
+            City.KeyUp += new KeyEventHandler(this.City_KeyUp);
+            State.KeyUp += new KeyEventHandler(this.State_KeyUp);
+            Zip.KeyUp += new KeyEventHandler(this.Zip_KeyUp);
+            Phone.KeyUp += new KeyEventHandler(this.Phone_KeyUp);
+            Email.KeyUp += new KeyEventHandler(this.Email_KeyUp);
+            AddLine1.KeyUp += new KeyEventHandler(this.AddLine1_KeyUp);
+            AddLine2.KeyUp += new KeyEventHandler(this.AddLine2_KeyUp);
         }
 
         /**
@@ -134,6 +148,15 @@ namespace Asg2
                 File.WriteAllLines(FILE_NAME, newlines);
                 RefreshListBox();
             }
+
+            FileStream fs2 = new FileStream(DETAIL_FILE, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter stream2 = new StreamWriter(fs2);
+
+            lineCount = File.ReadAllLines(FILE_NAME).Length;
+
+            stream2.Write("No. of backspaces used: " + back_counter);
+            stream2.Write("No. of lines: " + lineCount);
+            stream2.Close();
         }
 
         /**
@@ -283,6 +306,15 @@ namespace Asg2
 
         }
 
+        private void Phone_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+        }
+
         //Validation function allowing only numbers in Zip field
 
         private void Zip_KeyPress(object sender, KeyPressEventArgs e)
@@ -296,6 +328,15 @@ namespace Asg2
                 e.Handled = true; //Reject the input
             }
         }
+
+        private void Zip_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+        }
         // Validate FirstName field to allow only A-Z characters
         private void FirstName_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -307,8 +348,20 @@ namespace Asg2
             {
                 e.Handled = false; //Reject the input
             }
+
         }
 
+        
+        private void FirstName_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if(e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+        }
+        
+        
         // Validate MiddleInitial field to allow only A-Z characters
         private void MiddleInitial_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -319,6 +372,15 @@ namespace Asg2
             else
             {
                 e.Handled = false; //Reject the input
+            }
+        }
+
+        private void MiddleInitial_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
             }
         }
 
@@ -335,6 +397,15 @@ namespace Asg2
             }
         }
 
+        private void LastName_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+        }
+
         // Validate State field to allow only A-Z characters
         private void State_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -348,6 +419,51 @@ namespace Asg2
             }
         }
 
+        private void State_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+        }
+
+        private void AddLine1_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+        }
+
+        private void AddLine2_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+        }
+
+        private void City_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+        }
+
+        private void Email_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if(e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
+            {
+                back_counter++;
+            }
+   
+        }
+
     }
 }
-
