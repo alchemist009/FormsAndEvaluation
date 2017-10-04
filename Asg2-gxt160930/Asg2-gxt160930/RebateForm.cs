@@ -209,6 +209,7 @@ namespace Asg2
             }
             File.WriteAllLines(FILE_NAME, newlines);
             RefreshListBox();
+            lineCount--;
         }
         /**
          * Function to display updated entries in the listBox
