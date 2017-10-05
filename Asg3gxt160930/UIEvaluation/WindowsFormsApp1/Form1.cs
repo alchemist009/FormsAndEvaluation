@@ -49,14 +49,29 @@ namespace WindowsFormsApp1
 
         private void runButton_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(DETAILS_FILE, FileMode.Append);
-            StreamWriter stream = new StreamWriter(fs);
+            string backline = File.ReadLines(file).Skip(lineCount - 1).Take(1).First();                 //Read line for number of backspaces
+            TimeSpan minTime = TimeSpan.MaxValue, maxTime = TimeSpan.MinValue, avgTime = TimeSpan.Zero;
+            int recordsFileLength = System.IO.File.ReadAllLines(file).Length;
+            string[] records = System.IO.File.ReadAllLines(file);
 
-            string line = File.ReadLines(file).Skip(lineCount - 1).Take(1).First();
-
-            stream.Write(line);
-
-            stream.Close();
+            for(int i=0; i < recordsFileLength - 1; i++)
+            {
+                string[] temp = records[i].Split('\t');
+                //MessageBox.Show(temp.Length + " ", "Show");
+                DateTime startTime = Convert.ToDateTime(temp[12]);
+                DateTime endTime = Convert.ToDateTime(temp[13]);
+                TimeSpan diff = endTime - startTime;
+                maxTime = (diff > maxTime) ? diff : maxTime;
+                minTime = (diff < minTime) ? diff : minTime;
+                
+            }
+            string[] details = new string[9];
+            //details[2] = records[3];
+            details[0] = ("No. of records: " + (recordsFileLength - 1));
+            details[1] = ("Max time is: " + maxTime);
+            details[2] = ("Min time is: " + minTime);
+            details[8] = backline;
+            File.WriteAllLines(DETAILS_FILE, details);
 
         }
     }
