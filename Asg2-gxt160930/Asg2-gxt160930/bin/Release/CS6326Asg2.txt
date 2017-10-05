@@ -1,2 +1,0 @@
-Khal	J	Drogo	Borough 76	Shanty 23	Vas Dothrak	ES	23444	7776323232	thekhalrules@got.com	True	9/24/2017 3:29:42 PM	9/24/2017 3:30:02 PM	9/24/2017 3:31:12 PM
-Daenerys	P	Targaeryen	Hallway 19	Chamber 3	Dragonstone	WS	22232	8787878777	thekhaleesi@got.com	False	9/24/2017 12:00:00 AM	9/24/2017 3:31:20 PM	9/24/2017 3:33:01 PM

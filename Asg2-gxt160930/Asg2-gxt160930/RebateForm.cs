@@ -39,10 +39,8 @@ namespace Asg2
         bool modifyFlag = false;                        //Flag used to check if user wants to modify existing record or add a new one
         string FILE_NAME = @"CS6326Asg2.txt";           //Text file to store records
         int back_counter = 0;
-        string DETAIL_FILE = @"Params.txt";
         int lineCount = 0;
-        DateTime timeSum;
-        DateTime maxTime, diff;
+        
 
 
         public RebateForm()
@@ -51,7 +49,7 @@ namespace Asg2
             FirstName.TextChanged += new EventHandler(this.FirstName_TextChanged);      //Event handler for text change in First Name text box
             Phone.KeyPress += new KeyPressEventHandler(this.Phone_KeyPress);            //Event handler for validation of phone number
             Zip.KeyPress += new KeyPressEventHandler(this.Zip_KeyPress);                //Event handler for validation of Zip
-            FirstName.KeyPress += new KeyPressEventHandler(this.FirstName_KeyPress);        //Event handler for validation of FirstName
+            //FirstName.KeyPress += new KeyPressEventHandler(this.FirstName_KeyPress);        //Event handler for validation of FirstName
             Lastname.KeyPress += new KeyPressEventHandler(this.LastName_KeyPress);          //Event handler for validation of LastName
             Middleinitial.KeyPress += new KeyPressEventHandler(this.MiddleInitial_KeyPress);        //Event handler for validation of MiddleInitial
             State.KeyPress += new KeyPressEventHandler(this.State_KeyPress);            //Event handler for validation of State
@@ -126,7 +124,7 @@ namespace Asg2
                 }
 
                 //lineCount = File.ReadAllLines(FILE_NAME).Length;
-                stream.Write("No. of backspaces used: " + back_counter);
+                
 
                 stream.Close();
 
@@ -260,6 +258,12 @@ namespace Asg2
         private void RebateForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             //MessageBox.Show("Closing form.", "Goodbye");
+            FileStream fs = new FileStream(FILE_NAME, FileMode.Append);
+            StreamWriter stream = new StreamWriter(fs);
+
+            stream.Write("No. of backspaces used: " + back_counter);
+
+            stream.Close();
         }
 
         /**
@@ -345,6 +349,8 @@ namespace Asg2
                 back_counter++;
             }
         }
+
+        /*
         // Validate FirstName field to allow only A-Z characters
         private void FirstName_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -358,6 +364,7 @@ namespace Asg2
             }
 
         }
+        */
 
         
         private void FirstName_KeyUp(object sender, KeyEventArgs e)
