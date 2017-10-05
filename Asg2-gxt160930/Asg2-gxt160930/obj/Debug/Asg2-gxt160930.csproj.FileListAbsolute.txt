@@ -36,3 +36,13 @@ C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.Ge
 C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.CoreCompileInputs.cache
 C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.exe
 C:\Projects\hcl\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.pdb
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.exe.config
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.exe
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\bin\Debug\Asg2-gxt160930.pdb
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csprojResolveAssemblyReference.cache
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2gxt160930.Properties.Resources.resources
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2.RebateForm.resources
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.GenerateResource.Cache
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.csproj.CoreCompileInputs.cache
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.exe
+C:\Projects\hci\Asg2-gxt160930\Asg2-gxt160930\obj\Debug\Asg2-gxt160930.pdb

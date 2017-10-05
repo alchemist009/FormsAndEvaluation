@@ -125,6 +125,9 @@ namespace Asg2
 
                 }
 
+                //lineCount = File.ReadAllLines(FILE_NAME).Length;
+                stream.Write("No. of backspaces used: " + back_counter);
+
                 stream.Close();
 
             }
@@ -151,19 +154,16 @@ namespace Asg2
                 RefreshListBox();
             }
 
-            FileStream fs2 = new FileStream(DETAIL_FILE, FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter stream2 = new StreamWriter(fs2);
+            //FileStream fs2 = new FileStream(DETAIL_FILE, FileMode.OpenOrCreate, FileAccess.Write);
+            //StreamWriter stream2 = new StreamWriter(fs2);
 
             //diff = Convert.ToDateTime(EndText) - Convert.ToDateTime(StartText);
-            if (diff > maxTime) maxTime = diff;
-            timeSum += diff;
+            
 
-            lineCount = File.ReadAllLines(FILE_NAME).Length;
-
-            stream2.Write("No. of backspaces used: " + back_counter);
-            stream2.WriteLine();
-            stream2.Write("No. of records in data file: " + lineCount);
-            stream2.Close();
+            //stream.Write("No. of backspaces used: " + back_counter);
+            //stream2.WriteLine();
+           // stream2.Write("No. of records in data file: " + lineCount);
+            //stream2.Close();
         }
 
         /**
