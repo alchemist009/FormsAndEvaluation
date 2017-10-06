@@ -40,8 +40,8 @@
             // 
             // browse
             // 
-            this.browse.Location = new System.Drawing.Point(414, 49);
-            this.browse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.browse.Location = new System.Drawing.Point(414, 52);
+            this.browse.Margin = new System.Windows.Forms.Padding(4);
             this.browse.Name = "browse";
             this.browse.Size = new System.Drawing.Size(100, 28);
             this.browse.TabIndex = 0;
@@ -57,7 +57,7 @@
             // runButton
             // 
             this.runButton.Location = new System.Drawing.Point(114, 259);
-            this.runButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.runButton.Margin = new System.Windows.Forms.Padding(4);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(241, 113);
             this.runButton.TabIndex = 2;
@@ -118,7 +118,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.runButton);
             this.Controls.Add(this.browse);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
