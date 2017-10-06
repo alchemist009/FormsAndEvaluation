@@ -1,4 +1,18 @@
-﻿using System;
+﻿/**
+ * User Interface Evaluation program
+ * 
+ * @author: Gunjan Tomer
+ * 
+ * This program analyzes a data file of records generated using the RebataForm program 
+ * from Assignment 2. A GUI is presented to the evaluator giving an option to browse a
+ * file from the system. The selected file's path is displayed in a text box next to the
+ * 'Browse' button. Once the file is selected the user can either provide a name for the
+ * output evaluation file or just use the default name - 'Form_Evaluation.txt'. Clicking
+ * on the 'Run' button at the bottom processes the records file and generates all the 
+ * requisite information in a text file.
+ * 
+ * */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,11 +34,15 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        
+      
+        /**
+         * This function opens a file browsing dialog when the 'Browse' button is clicked. The selected file's path is displayed in a textbox alongside
+         * the button. If no file is selected, an error message pops up on running the program.
+         * 
+         * */
 
         private void browse_Click(object sender, EventArgs e)
         {
-            //int size = -1;
             DialogResult result = openFileDialog1.ShowDialog();
             if(result == DialogResult.OK)
             {
@@ -46,8 +64,23 @@ namespace WindowsFormsApp1
 
         }
 
+        /**
+         * The associated function for clicking the Run button. All the main processing of the records text file is done here.
+         * The number of records are read and the time intervals required for evaluation are calculated using the TimeSpan variable
+         * class. All the metrics are stored in a details array and subsequently written to both the text file and displayed in the
+         * listbox of the UI.
+         * 
+         * */
         private void runButton_Click(object sender, EventArgs e)
         {
+
+            if ((string.IsNullOrEmpty(selectedFile.Text)))
+            {
+                MessageBox.Show("Please select a file before running the evaluation", "Error");
+                return;
+            }
+
+
             string backline = File.ReadLines(file).Skip(lineCount - 1).Take(1).First();                 //Read line for number of backspaces
             TimeSpan minTime = TimeSpan.MaxValue, maxTime = TimeSpan.MinValue, avgTime = TimeSpan.Zero, 
             sumTime = TimeSpan.Zero, interdiff, maxInterDiff = TimeSpan.MinValue, minInterDiff = TimeSpan.MaxValue, interAvgTime = TimeSpan.Zero;
@@ -61,7 +94,6 @@ namespace WindowsFormsApp1
             for (int i=0; i < recordsFileLength - 1; i++)
             {
                 string[] temp = records[i].Split('\t');
-                //MessageBox.Show(temp.Length + " ", "Show");
                 DateTime startTime = Convert.ToDateTime(temp[12]);
                 DateTime endTime = Convert.ToDateTime(temp[13]);
                 timeList2.Add(startTime);
@@ -90,6 +122,7 @@ namespace WindowsFormsApp1
             interAvgTime = new TimeSpan(longAverageTicks2);
 
             string[] details = new string[9];
+
             details[0] = ("No. of records: " + (recordsFileLength - 1));
             details[1] = ("Max time is: " + maxTime.ToString(@"mm\:ss"));
             details[2] = ("Min time is: " + minTime.ToString(@"mm\:ss"));

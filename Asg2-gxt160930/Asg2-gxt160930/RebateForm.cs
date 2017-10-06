@@ -151,17 +151,6 @@ namespace Asg2
                 File.WriteAllLines(FILE_NAME, newlines);
                 RefreshListBox();
             }
-
-            //FileStream fs2 = new FileStream(DETAIL_FILE, FileMode.OpenOrCreate, FileAccess.Write);
-            //StreamWriter stream2 = new StreamWriter(fs2);
-
-            //diff = Convert.ToDateTime(EndText) - Convert.ToDateTime(StartText);
-            
-
-            //stream.Write("No. of backspaces used: " + back_counter);
-            //stream2.WriteLine();
-           // stream2.Write("No. of records in data file: " + lineCount);
-            //stream2.Close();
         }
 
         /**
@@ -224,7 +213,7 @@ namespace Asg2
         {
             Records.Items.Clear();
             string[] lines = File.ReadAllLines(FILE_NAME);
-            for (int i = 0; i < lines.Length; ++i)
+            for (int i = 0; i < lines.Length-1; ++i)
             {
                 Person p = Person.GetObject(lines[i].Split(new char[] { '\t' }));
                 Records.Items.Add(p.GetInfo());
