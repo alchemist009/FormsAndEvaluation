@@ -41,6 +41,8 @@
             this.totalTimeBox = new System.Windows.Forms.TextBox();
             this.abortButton = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.SuspendLayout();
             // 
             // selectedFile
@@ -84,6 +86,7 @@
             this.searchButton.TabIndex = 5;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // fileName
             // 
@@ -149,11 +152,20 @@
             this.openFileDialog2.FileName = "openFileDialog2";
             this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk_1);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 584);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(878, 22);
+            this.statusStrip1.TabIndex = 13;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 606);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.abortButton);
             this.Controls.Add(this.totalTimeBox);
             this.Controls.Add(this.totalTimeLabel);
@@ -188,6 +200,8 @@
         private System.Windows.Forms.TextBox totalTimeBox;
         private System.Windows.Forms.Button abortButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 

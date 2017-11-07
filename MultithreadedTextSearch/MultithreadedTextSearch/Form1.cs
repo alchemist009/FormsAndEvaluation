@@ -16,10 +16,61 @@ namespace MultithreadedTextSearch
         string file;
         string TEXT_FILE;
         int lineCount;
+
+        BackgroundWorker b_worker;
+
         public Form1()
         {
             InitializeComponent();
+            b_worker = new BackgroundWorker();
+
+            b_worker.DoWork += new DoWorkEventHandler(b_worker_DoWork);
+            b_worker.WorkerSupportsCancellation = true;
+            b_worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(b_worker_RunWorkerCompleted);
         }
+
+
+        void b_worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+            if(e.Cancelled)
+            {
+                statusStrip1.Text = "Search cancelled";
+                statusStrip1.Invalidate();
+                statusStrip1.Refresh();
+            }
+
+            else if(e.Error != null)
+            {
+                statusStrip1.Text = "Error while performing search";
+                statusStrip1.Invalidate();
+                statusStrip1.Refresh();
+            }
+
+            else
+            {
+                statusStrip1.Text = "Search completed";
+                statusStrip1.Invalidate();
+                statusStrip1.Refresh();
+            }
+
+            searchButton.Enabled = true;
+            abortButton.Enabled = false;
+        }
+
+
+        void b_worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            for(int i = 0; i < lineCount; i++)
+            {
+                /*
+                 * 
+                 * Finish this
+                */
+            }
+        }
+
+
 
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -39,6 +90,11 @@ namespace MultithreadedTextSearch
                 }
             }
                 
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
         }
 
 
