@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace MultithreadedTextSearch
 {
@@ -16,17 +17,37 @@ namespace MultithreadedTextSearch
         string file;
         string TEXT_FILE;
         int lineCount;
-
-        BackgroundWorker b_worker;
+        private System.ComponentModel.BackgroundWorker b_worker;
 
         public Form1()
         {
             InitializeComponent();
             b_worker = new BackgroundWorker();
 
-            b_worker.DoWork += new DoWorkEventHandler(b_worker_DoWork);
+            b_worker.DoWork += new DoWorkEventHandler(b_worker_Scan_File);
             b_worker.WorkerSupportsCancellation = true;
             b_worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(b_worker_RunWorkerCompleted);
+            b_worker.ProgressChanged += new ProgressChangedEventHandler(b_worker_ProgressChanged);
+           // b_worker.RunWorkerAsync(listView1);
+        }
+
+        private void browseButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog2.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                file = openFileDialog2.FileName;
+                try
+                {
+                    lineCount = File.ReadAllLines(file).Count();
+                    selectedFile.Text = file;
+                }
+                catch (IOException)
+                {
+                    statusStrip1.Text = "File read error";
+                }
+            }
+
         }
 
 
@@ -59,42 +80,54 @@ namespace MultithreadedTextSearch
         }
 
 
-        void b_worker_DoWork(object sender, DoWorkEventArgs e)
+        void b_worker_Scan_File(object sender, DoWorkEventArgs e)
         {
-            for(int i = 0; i < lineCount; i++)
+            List<String []> strList = new List<string []>();
+            string line;
+            int lineNumber = 0;
+            System.IO.StreamReader file1 = new System.IO.StreamReader(file);
+            while((line = file1.ReadLine()) != null)
             {
-                /*
-                 * 
-                 * Finish this
-                */
+                lineNumber++;
+                if(b_worker.CancellationPending == true)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+
+                else
+                {
+                    if(line.ToLowerInvariant().Contains(searchWord.Text))
+                    {
+                        string[] foundInstance = { lineNumber.ToString(), line };
+                        var listViewItem = new ListViewItem(foundInstance);
+                        listView1.Items.Add(listViewItem);
+                        // strList.Add(foundInstance);
+                        // b_worker.ReportProgress(0, strList[0]);
+                    }
+                }
             }
         }
 
-
-
-
-        private void browseButton_Click(object sender, EventArgs e)
+        private void b_worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            DialogResult result = openFileDialog2.ShowDialog();
-            if(result == DialogResult.OK)
-            {
-                file = openFileDialog2.FileName;
-                try
-                {
-                    lineCount = File.ReadAllLines(file).Count();
-                    selectedFile.Text = file;
-                }
-                catch(IOException)
-                {
+           // var listViewItem = new ListViewItem();
 
-                }
-            }
-                
         }
+
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            searchButton.Enabled = false;
+            abortButton.Enabled = true;
+            b_worker.RunWorkerAsync();
+        }
 
+        private void abortButton_Click(object sender, EventArgs e)
+        {
+            this.b_worker.CancelAsync();
+
+            abortButton.Enabled = false;
         }
 
 

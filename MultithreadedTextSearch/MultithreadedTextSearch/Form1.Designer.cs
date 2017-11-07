@@ -31,7 +31,6 @@
             this.selectedFile = new System.Windows.Forms.TextBox();
             this.searchWord = new System.Windows.Forms.TextBox();
             this.browseButton = new System.Windows.Forms.Button();
-            this.occurrenceList = new System.Windows.Forms.ListBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.fileName = new System.Windows.Forms.Label();
             this.findWord = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // selectedFile
@@ -69,14 +69,6 @@
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
             this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
-            // 
-            // occurrenceList
-            // 
-            this.occurrenceList.FormattingEnabled = true;
-            this.occurrenceList.Location = new System.Drawing.Point(30, 183);
-            this.occurrenceList.Name = "occurrenceList";
-            this.occurrenceList.Size = new System.Drawing.Size(624, 394);
-            this.occurrenceList.TabIndex = 4;
             // 
             // searchButton
             // 
@@ -160,11 +152,20 @@
             this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(15, 183);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(603, 394);
+            this.listView1.TabIndex = 14;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 606);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.abortButton);
             this.Controls.Add(this.totalTimeBox);
@@ -174,7 +175,6 @@
             this.Controls.Add(this.findWord);
             this.Controls.Add(this.fileName);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.occurrenceList);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.searchWord);
             this.Controls.Add(this.selectedFile);
@@ -190,7 +190,6 @@
         private System.Windows.Forms.TextBox selectedFile;
         private System.Windows.Forms.TextBox searchWord;
         private System.Windows.Forms.Button browseButton;
-        private System.Windows.Forms.ListBox occurrenceList;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Label fileName;
         private System.Windows.Forms.Label findWord;
@@ -202,6 +201,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
