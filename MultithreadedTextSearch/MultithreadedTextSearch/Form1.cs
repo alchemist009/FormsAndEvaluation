@@ -15,6 +15,7 @@ namespace MultithreadedTextSearch
     {
         string file;
         string TEXT_FILE;
+        int lineCount;
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace MultithreadedTextSearch
                 file = openFileDialog2.FileName;
                 try
                 {
-                    int lineCount = File.ReadAllLines(file).Count();
+                    lineCount = File.ReadAllLines(file).Count();
                     selectedFile.Text = file;
                 }
                 catch(IOException)
