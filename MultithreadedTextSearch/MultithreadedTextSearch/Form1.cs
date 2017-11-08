@@ -101,7 +101,11 @@ namespace MultithreadedTextSearch
                     {
                         string[] foundInstance = { lineNumber.ToString(), line };
                         var listViewItem = new ListViewItem(foundInstance);
-                        listView1.Items.Add(listViewItem);
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            listView1.Items.Add(listViewItem);
+                        });
+                        
                         // strList.Add(foundInstance);
                         // b_worker.ReportProgress(0, strList[0]);
                     }
