@@ -18,6 +18,7 @@ namespace MultithreadedTextSearch
         string TEXT_FILE;
         int lineCount;
         private System.ComponentModel.BackgroundWorker b_worker;
+        Boolean button_flag = false;
 
         public Form1()
         {
@@ -28,7 +29,11 @@ namespace MultithreadedTextSearch
             b_worker.WorkerSupportsCancellation = true;
             b_worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(b_worker_RunWorkerCompleted);
             b_worker.ProgressChanged += new ProgressChangedEventHandler(b_worker_ProgressChanged);
-           // b_worker.RunWorkerAsync(listView1);
+            // b_worker.RunWorkerAsync(listView1);
+            listView1.View = View.Details;
+            listView1.Columns.Add("Line number");
+            listView1.Columns.Add("Phrase found");
+            toolStripStatusLabel1.Text = "Ready for operation";
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -56,31 +61,28 @@ namespace MultithreadedTextSearch
 
             if(e.Cancelled)
             {
-                statusStrip1.Text = "Search cancelled";
+                toolStripStatusLabel1.Text = "Search cancelled";
                 statusStrip1.Invalidate();
                 statusStrip1.Refresh();
             }
 
             else if(e.Error != null)
             {
-                statusStrip1.Text = "Error while performing search";
+                toolStripStatusLabel1.Text = "Error while performing search";
                 statusStrip1.Invalidate();
                 statusStrip1.Refresh();
             }
 
             else
             {
-                statusStrip1.Text = "Search completed";
+                toolStripStatusLabel1.Text = "Search running...";
                 statusStrip1.Invalidate();
                 statusStrip1.Refresh();
             }
-
-            searchButton.Enabled = true;
-            abortButton.Enabled = false;
         }
 
 
-        void b_worker_Scan_File(object sender, DoWorkEventArgs e)
+        async void b_worker_Scan_File(object sender, DoWorkEventArgs e)
         {
             List<String []> strList = new List<string []>();
             string line;
@@ -88,7 +90,6 @@ namespace MultithreadedTextSearch
             System.IO.StreamReader file1 = new System.IO.StreamReader(file);
             while((line = file1.ReadLine()) != null)
             {
-                lineNumber++;
                 if(b_worker.CancellationPending == true)
                 {
                     e.Cancel = true;
@@ -99,39 +100,54 @@ namespace MultithreadedTextSearch
                 {
                     if(line.ToLowerInvariant().Contains(searchWord.Text))
                     {
-                        string[] foundInstance = { lineNumber.ToString(), line };
-                        var listViewItem = new ListViewItem(foundInstance);
-                        BeginInvoke((MethodInvoker)delegate
-                        {
-                            listView1.Items.Add(listViewItem);
-                        });
-                        
-                        // strList.Add(foundInstance);
-                        // b_worker.ReportProgress(0, strList[0]);
+                        await Task.Delay(2000);
+                        string[] foundInstance = {(lineNumber + 1).ToString()};
+                        ListViewItem lstitem = new ListViewItem(foundInstance);
+                        lstitem.SubItems.Add(line);
+                        BeginInvoke
+                        ((MethodInvoker)delegate
+                            {
+                                listView1.Items.Add(lstitem);                                
+                            }
+                        );
                     }
                 }
+                lineNumber++;
             }
+            toolStripStatusLabel1.Text = "Search finished";        
         }
 
         private void b_worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-           // var listViewItem = new ListViewItem();
 
         }
 
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            searchButton.Enabled = false;
-            abortButton.Enabled = true;
-            b_worker.RunWorkerAsync();
+            if (button_flag == false)
+            {
+                b_worker.RunWorkerAsync();
+                searchButton.Text = "Abort";
+                button_flag = true;
+                toolStripStatusLabel1.Text = "Performing search...";
+                clearButton.Enabled = false;
+            }
+            else
+            {
+                b_worker.CancelAsync();
+                searchButton.Text = "Search";
+                button_flag = false;
+                toolStripStatusLabel1.Text = "Ready for operation";
+                clearButton.Enabled = true;
+                instancesFoundBox.Text = (listView1.Items.Count).ToString();
+            }
         }
 
-        private void abortButton_Click(object sender, EventArgs e)
+        private void clearButton_Click(object sender, EventArgs e)
         {
-            this.b_worker.CancelAsync();
-
-            abortButton.Enabled = false;
+            listView1.Items.Clear();
+            instancesFoundBox.Text = "";
         }
 
 

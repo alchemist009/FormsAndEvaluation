@@ -38,11 +38,13 @@
             this.instanceLabel = new System.Windows.Forms.Label();
             this.totalTimeLabel = new System.Windows.Forms.Label();
             this.totalTimeBox = new System.Windows.Forms.TextBox();
-            this.abortButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // selectedFile
@@ -130,14 +132,15 @@
             this.totalTimeBox.Size = new System.Drawing.Size(100, 20);
             this.totalTimeBox.TabIndex = 11;
             // 
-            // abortButton
+            // clearButton
             // 
-            this.abortButton.Location = new System.Drawing.Point(694, 331);
-            this.abortButton.Name = "abortButton";
-            this.abortButton.Size = new System.Drawing.Size(156, 80);
-            this.abortButton.TabIndex = 12;
-            this.abortButton.Text = "Abort!!";
-            this.abortButton.UseVisualStyleBackColor = true;
+            this.clearButton.Location = new System.Drawing.Point(694, 331);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(156, 80);
+            this.clearButton.TabIndex = 12;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // openFileDialog2
             // 
@@ -146,6 +149,8 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 584);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(878, 22);
@@ -160,6 +165,12 @@
             this.listView1.TabIndex = 14;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,7 +178,7 @@
             this.ClientSize = new System.Drawing.Size(878, 606);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.abortButton);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.totalTimeBox);
             this.Controls.Add(this.totalTimeLabel);
             this.Controls.Add(this.instanceLabel);
@@ -180,6 +191,8 @@
             this.Controls.Add(this.selectedFile);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,11 +210,12 @@
         private System.Windows.Forms.Label instanceLabel;
         private System.Windows.Forms.Label totalTimeLabel;
         private System.Windows.Forms.TextBox totalTimeBox;
-        private System.Windows.Forms.Button abortButton;
+        private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
