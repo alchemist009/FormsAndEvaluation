@@ -75,7 +75,7 @@ namespace MultithreadedTextSearch
 
             else
             {
-                toolStripStatusLabel1.Text = "Search running...";
+                toolStripStatusLabel1.Text = "Search finished";
                 statusStrip1.Invalidate();
                 statusStrip1.Refresh();
             }
@@ -100,7 +100,6 @@ namespace MultithreadedTextSearch
                 {
                     if(line.ToLowerInvariant().Contains(searchWord.Text))
                     {
-                        await Task.Delay(2000);
                         string[] foundInstance = {(lineNumber + 1).ToString()};
                         ListViewItem lstitem = new ListViewItem(foundInstance);
                         lstitem.SubItems.Add(line);
@@ -113,8 +112,20 @@ namespace MultithreadedTextSearch
                     }
                 }
                 lineNumber++;
+               // await Task.Delay(1);
             }
-            toolStripStatusLabel1.Text = "Search finished";        
+            
+            BeginInvoke
+                ((MethodInvoker)delegate
+                    {
+                        searchButton.Text = "Search";
+                        button_flag = !(button_flag);
+                        clearButton.Enabled = true;
+                        instancesFoundBox.Text = listView1.Items.Count.ToString();
+                    }
+                );
+           // button_flag = false;
+           
         }
 
         private void b_worker_ProgressChanged(object sender, ProgressChangedEventArgs e)

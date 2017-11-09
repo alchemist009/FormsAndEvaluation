@@ -36,8 +36,6 @@
             this.findWord = new System.Windows.Forms.Label();
             this.instancesFoundBox = new System.Windows.Forms.TextBox();
             this.instanceLabel = new System.Windows.Forms.Label();
-            this.totalTimeLabel = new System.Windows.Forms.Label();
-            this.totalTimeBox = new System.Windows.Forms.TextBox();
             this.clearButton = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -116,22 +114,6 @@
             this.instanceLabel.TabIndex = 9;
             this.instanceLabel.Text = "Instances found :";
             // 
-            // totalTimeLabel
-            // 
-            this.totalTimeLabel.AutoSize = true;
-            this.totalTimeLabel.Location = new System.Drawing.Point(663, 526);
-            this.totalTimeLabel.Name = "totalTimeLabel";
-            this.totalTimeLabel.Size = new System.Drawing.Size(92, 13);
-            this.totalTimeLabel.TabIndex = 10;
-            this.totalTimeLabel.Text = "Total time taken : ";
-            // 
-            // totalTimeBox
-            // 
-            this.totalTimeBox.Location = new System.Drawing.Point(769, 526);
-            this.totalTimeBox.Name = "totalTimeBox";
-            this.totalTimeBox.Size = new System.Drawing.Size(100, 20);
-            this.totalTimeBox.TabIndex = 11;
-            // 
             // clearButton
             // 
             this.clearButton.Location = new System.Drawing.Point(694, 331);
@@ -179,8 +161,6 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.totalTimeBox);
-            this.Controls.Add(this.totalTimeLabel);
             this.Controls.Add(this.instanceLabel);
             this.Controls.Add(this.instancesFoundBox);
             this.Controls.Add(this.findWord);
@@ -208,8 +188,6 @@
         private System.Windows.Forms.Label findWord;
         private System.Windows.Forms.TextBox instancesFoundBox;
         private System.Windows.Forms.Label instanceLabel;
-        private System.Windows.Forms.Label totalTimeLabel;
-        private System.Windows.Forms.TextBox totalTimeBox;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
