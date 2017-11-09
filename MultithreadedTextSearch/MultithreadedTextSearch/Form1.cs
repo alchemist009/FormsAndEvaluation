@@ -1,4 +1,13 @@
-﻿using System;
+﻿/// ========================================================
+/// AUTHOR :        Gunjan Tomer
+/// CREATE DATE :   11/10/2017
+/// PURPOSE :       
+///
+///
+///
+///
+///
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +18,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Media;
 
 namespace MultithreadedTextSearch
 {
@@ -69,13 +79,14 @@ namespace MultithreadedTextSearch
                 statusStrip1.Invalidate();
                 statusStrip1.Refresh();
             }
-
+            /*
             else
             {
-                toolStripStatusLabel1.Text = "Search finished";
+                toolStripStatusLabel1.Text = "Searching...";
                 statusStrip1.Invalidate();
                 statusStrip1.Refresh();
             }
+            */
         }
 
 
@@ -119,7 +130,10 @@ namespace MultithreadedTextSearch
                         clearButton.Enabled = true;
                         instancesFoundBox.Text = listView1.Items.Count.ToString();
                     }
-                );           
+                );
+            SoundPlayer simpleSound = new SoundPlayer(MultithreadedTextSearch.Properties.Resources.chimes);
+            simpleSound.Play();
+            toolStripStatusLabel1.Text = "Search finished";
         }
 
         private void b_worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
