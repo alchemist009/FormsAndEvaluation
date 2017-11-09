@@ -29,10 +29,7 @@ namespace MultithreadedTextSearch
             b_worker.WorkerSupportsCancellation = true;
             b_worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(b_worker_RunWorkerCompleted);
             b_worker.ProgressChanged += new ProgressChangedEventHandler(b_worker_ProgressChanged);
-            // b_worker.RunWorkerAsync(listView1);
             listView1.View = View.Details;
-            listView1.Columns.Add("Line number");
-            listView1.Columns.Add("Phrase found");
             toolStripStatusLabel1.Text = "Ready for operation";
         }
 
@@ -112,9 +109,8 @@ namespace MultithreadedTextSearch
                     }
                 }
                 lineNumber++;
-               // await Task.Delay(1);
+                await Task.Delay(1);
             }
-            
             BeginInvoke
                 ((MethodInvoker)delegate
                     {
@@ -123,9 +119,7 @@ namespace MultithreadedTextSearch
                         clearButton.Enabled = true;
                         instancesFoundBox.Text = listView1.Items.Count.ToString();
                     }
-                );
-           // button_flag = false;
-           
+                );           
         }
 
         private void b_worker_ProgressChanged(object sender, ProgressChangedEventArgs e)

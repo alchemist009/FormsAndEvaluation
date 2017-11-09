@@ -42,6 +42,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.listView1 = new System.Windows.Forms.ListView();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,6 +143,9 @@
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
             this.listView1.Location = new System.Drawing.Point(15, 183);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(603, 394);
@@ -152,6 +157,18 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Tag = "Line no.";
+            this.columnHeader1.Text = "Line no.";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Tag = "Phrase found";
+            this.columnHeader2.Text = "Line found";
+            this.columnHeader2.Width = 500;
             // 
             // Form1
             // 
@@ -194,6 +211,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
 
