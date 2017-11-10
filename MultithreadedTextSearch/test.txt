@@ -4,3 +4,6 @@ test
 no
 
 this is atest.
+
+if test == 4
+then passed.
