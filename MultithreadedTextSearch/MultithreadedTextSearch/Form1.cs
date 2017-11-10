@@ -120,11 +120,11 @@ namespace MultithreadedTextSearch
                     }
                 }
                 lineNumber++;
-                await Task.Delay(1);
+               // await Task.Delay(1);
             }
             BeginInvoke
                 ((MethodInvoker)delegate
-                    {
+                    { 
                         searchButton.Text = "Search";
                         button_flag = !(button_flag);
                         clearButton.Enabled = true;
@@ -146,6 +146,7 @@ namespace MultithreadedTextSearch
         {
             if (button_flag == false)
             {
+                listView1.Items.Clear();
                 b_worker.RunWorkerAsync();
                 searchButton.Text = "Abort";
                 button_flag = true;
@@ -155,8 +156,8 @@ namespace MultithreadedTextSearch
             else
             {
                 b_worker.CancelAsync();
-                searchButton.Text = "Search";
                 button_flag = false;
+                searchButton.Text = "Search";
                 toolStripStatusLabel1.Text = "Ready for operation";
                 clearButton.Enabled = true;
                 instancesFoundBox.Text = (listView1.Items.Count).ToString();
