@@ -151,7 +151,7 @@ namespace MultithreadedTextSearch
                 {
                     listView1.Items.Clear();
                     b_worker.RunWorkerAsync();
-                    searchButton.Text = "Abort";
+                    searchButton.Text = "Cancel";
                     button_flag = true;
                     toolStripStatusLabel1.Text = "Performing search...";
                     clearButton.Enabled = false;
